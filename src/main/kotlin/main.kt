@@ -1,6 +1,13 @@
+import java.util.*
+
 fun main() {
-    val seconds = 600
-    println(agoToText(seconds))
+    var seconds: Int
+    val scanner = Scanner(System.`in`)
+    while(true) {
+        println("Введите количество секунд, с момента выхода пользователя из сети")
+        seconds = scanner.nextInt()
+        println(agoToText(seconds))
+    }
 }
 
 fun agoToText(seconds: Int): String {
