@@ -12,11 +12,11 @@ fun main() {
 
 fun agoToText(seconds: Int): String {
     return when {
-        seconds >= 0 && seconds <= 60 -> "был(а) только что"
-        seconds >= 61 && seconds <= 3_600 -> "был(а) ${minutesFormatting(seconds)} назад"
-        seconds >= 3_601 && seconds <= 86_400 -> "был(а) ${hoursFormatting(seconds)} назад"
-        seconds >= 86_401 && seconds <= 172_800 -> "был(а) в сети сегодня"
-        seconds >= 172_801 && seconds <= 259_200 -> "был(а) в сети вчера"
+        seconds in 0..60 -> "был(а) только что"
+        seconds in 61..3_600 -> "был(а) ${minutesFormatting(seconds)} назад"
+        seconds in 3_601..86_400 -> "был(а) ${hoursFormatting(seconds)} назад"
+        seconds in 86_401..172_800 -> "был(а) в сети сегодня"
+        seconds in 172_801..259_200 -> "был(а) в сети вчера"
         seconds >= 259_201 -> "был(а) в сети давно"
         else -> "Некорректное значение"
     }
