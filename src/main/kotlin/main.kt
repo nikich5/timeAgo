@@ -1,11 +1,10 @@
 import java.util.*
 
 fun main() {
-    var seconds: Int
     val scanner = Scanner(System.`in`)
     while(true) {
         println("Введите количество минут, с момента выхода пользователя из сети")
-        seconds = scanner.nextInt() * 60
+        val seconds = scanner.nextInt() * 60
         println(agoToText(seconds))
     }
 }
